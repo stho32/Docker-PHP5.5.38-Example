@@ -4,4 +4,4 @@
     root
 #>
 
-docker run --name Webserver -p 80:80 -d drupalci:php-5.5.38-apache
+docker run --name Webserver -p 80:80 -d nubs/arch-build
