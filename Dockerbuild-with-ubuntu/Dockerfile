@@ -22,21 +22,16 @@ RUN wget http://br1.php.net/get/php-5.5.38.tar.bz2/from/this/mirror -O php-5.5.3
 RUN tar jxf php-5.5.38.tar.bz2
 
 RUN cd php-5.5.38/
-RUN ./configure --prefix=/opt/php-5.5.38 --with-pdo-pgsql --with-zlib-dir --with-freetype-dir --enable-mbstring \ 
---with-libxml-dir=/usr --enable-soap --enable-intl --enable-calendar --with-curl --with-mcrypt --with-zlib \
---with-gd --with-pgsql --disable-rpath --enable-inline-optimization --with-bz2 --with-zlib --enable-sockets \
---enable-sysvsem --enable-sysvshm --enable-pcntl --enable-mbregex --enable-exif --enable-bcmath --with-mhash \
---enable-zip --with-pcre-regex --with-mysql --with-pdo-mysql --with-mysqli --with-jpeg-dir=/usr --with-png-dir=/usr \
---enable-gd-native-ttf --with-openssl --with-fpm-user=www-data --with-fpm-group=www-data \
---with-libdir=/lib/x86_64-linux-gnu --enable-ftp --with-imap --with-imap-ssl --with-gettext --with-xmlrpc --with-xsl \
---with-kerberos --enable-fpm
+RUN ./configure --prefix=/opt/php-5.5.38 --with-pdo-pgsql --with-zlib-dir --with-freetype-dir --enable-mbstring --with-libxml-dir=/usr --enable-soap --enable-intl --enable-calendar --with-curl --with-mcrypt --with-zlib --with-gd --with-pgsql --disable-rpath --enable-inline-optimization --with-bz2 --with-zlib --enable-sockets --enable-sysvsem --enable-sysvshm --enable-pcntl --enable-mbregex --enable-exif --enable-bcmath --with-mhash --enable-zip --with-pcre-regex --with-mysql --with-pdo-mysql --with-mysqli --with-jpeg-dir=/usr --with-png-dir=/usr --enable-gd-native-ttf --with-openssl --with-fpm-user=www-data --with-fpm-group=www-data --with-libdir=/lib/x86_64-linux-gnu --enable-ftp --with-imap --with-imap-ssl --with-gettext --with-xmlrpc --with-xsl --with-kerberos --enable-fpm
 
 RUN make
 RUN make install
+
+-- BIS HIERHER IST ES PER SSH UBUNTU GETESTET!!! 
+
 RUN cp /usr/local/src/php5-build/php-5.5.38/php.ini-production /opt/php-5.5.38/lib/php.ini
 RUN cp /opt/php-5.5.38/etc/php-fpm.conf.default /opt/php-5.5.38/etc/php-fpm.conf
 RUN mkdir /opt/php-5.5.38/etc/php-fpm.d
-
 
 
 
